@@ -41,60 +41,43 @@
     </section>
       
     <section class="form-section">
-      <form action="">
-        <label for="">CARDHOLDER NAME</label>
-        <input type="text">
+      <form class="form">
+        <label for="name">CARDHOLDER NAME</label>
+        <input type="text" name="name" id="form__card-name" placeholder="e.g. Jane Appleseed">
 
-        <label for="">CARD NUMBER</label>
-        <input type="number" name="" id="">
+        <label for="form__card-number">CARD NUMBER</label>
+        <input type="number" name="" id="form__card-number" placeholder="e.g. 1234 5678 9123 0000">
 
-        <div>
-          <label for="">EXP DATE (MM/YY)</label>
-          <input type="date">
+        <div class="form__flexbox">
+          <div class="form__flexbox--box">
+          <label for="form__card-date--MM form__card-date--YY">EXP DATE (MM/YY)</label>
 
-          <label for="">CVC</label>
-          <input type="number">
+          <div>
+            <input type="number" name="" id="form__card-date--MM" placeholder="MM">
+            <input type="number" name="" id="form__card-date--YY" placeholder="YY">
+          </div>
+          
+        </div>
+
+        <div class="form__flexbox--box">
+          <label for="form__card-CVC">CVC</label>
+          <input type="number" name="" id="form__card-CVC" placeholder="e.g. 123">
+        </div>
         </div>
         
-        <button>Confirm</button>
+        <button type="button" class="form__button">Confirm</button>
       </form>
     </section>
   </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
- 
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
   <!-- Completed state start -->
 
-  Thank you!
+  <section style="display: none;">
+     Thank you!
   We've added your card details
   Continue
+  </section>
+ 
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
