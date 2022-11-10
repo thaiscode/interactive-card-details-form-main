@@ -19,14 +19,28 @@
 </head>
 <body>
   <main>
-    <section>
-      <div>
-        <img src="images/card-logo.svg" alt="">
+    <section class="card-section">
+      <div class="card-section__card-front">
+        <img src="images/card-logo.svg" alt="" class="card-front__logo">
+
+        <section class="card-front__text">
+          <p class="card-front__number">0000 0000 0000 0000</p>
+          <div class="card-front__text--flexbox">
+            <p class="card-front__name">Jane Appleseed</p>  
+            <p><span class="card-front__mounth">00</span>/<span class="card-front__year">00</span> </p>
+          </div>
+          
+        </section>
+        
+          
       </div>
-      <div></div>
+
+      <div class="card-section__card-back">
+        <p class="card-section__cvc">000</p>
+      </div>
     </section>
       
-    <section>
+    <section class="form-section">
       <form action="">
         <label for="">CARDHOLDER NAME</label>
         <input type="text">
@@ -46,11 +60,22 @@
       </form>
     </section>
   </main>
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
 
-  000
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ 
 
   Cardholder Name
   e.g. Jane Appleseed
