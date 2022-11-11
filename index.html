@@ -42,46 +42,49 @@
       
     <section class="form-section">
       <form class="form">
-        <label for="name">CARDHOLDER NAME</label>
-        <input type="text" name="name" id="form__card-name" placeholder="e.g. Jane Appleseed">
+        <section>
+          <label for="name">CARDHOLDER NAME</label>
+          <input type="text" name="name" id="form__card-name" placeholder="e.g. Jane Appleseed">
 
-        <label for="form__card-number">CARD NUMBER</label>
-        <input type="number" name="" id="form__card-number" placeholder="e.g. 1234 5678 9123 0000">
-
-        <div class="form__flexbox">
-          <div class="form__flexbox--box">
+          <label for="form__card-number">CARD NUMBER</label>
+          <input type="number" name="" id="form__card-number" placeholder="e.g. 1234 5678 9123 0000">
+        </section>
+        
+        <section class="form__flexbox">
+          <section class="form__flexbox--box">
           <label for="form__card-date--MM form__card-date--YY">EXP DATE (MM/YY)</label>
 
           <div>
-            <input type="number" name="" id="form__card-date--MM" placeholder="MM">
-            <input type="number" name="" id="form__card-date--YY" placeholder="YY">
+            <input type="number" id="form__card-date--MM" placeholder="MM">
+            <input type="number" id="form__card-date--YY" placeholder="YY">
           </div>
           
-        </div>
+        </section>
 
-        <div class="form__flexbox--box">
+        <section class="form__flexbox--box">
           <label for="form__card-CVC">CVC</label>
           <input type="number" name="" id="form__card-CVC" placeholder="e.g. 123">
-        </div>
-        </div>
+        </section>
+        </section>
         
         <button type="button" class="form__button">Confirm</button>
       </form>
     </section>
-  </main>
 
   <!-- Completed state start -->
 
-  <section style="display: none;">
-     Thank you!
-  We've added your card details
-  Continue
-  </section>
- 
-  
+    <section class="thanks-state">
+        <img src="images/icon-complete.svg" alt="">
+        <h1 class="thanks-state__title">Thank you!</h1>
+        <p class="thanks-state__paragraph">We've added your card details</p>
+        <button type="reset" class="thanks-state__button">Continue</button>
+    </section>
+  </main>
+
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <p>Challenge by 
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> Coded by <a href="#">@thaiscode</a>.</p>
+    
   </footer>
 
   <script src="script.js"></script>
