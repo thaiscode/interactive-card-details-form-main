@@ -48,10 +48,8 @@ p {
 }
 
 .card-section__card-front, .card-section__card-back {
-    width: 80%;
-    height: 30%;
-    max-width: 300px;
-    max-height: 180px;
+    width: min(80%, 300px);
+    height: min(30%, 180px);
     border-radius: 10px;
     position: absolute;
 }
@@ -83,20 +81,20 @@ p {
     flex-direction: column;
 }
 
+.card-front__text--flexbox, .form__flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: min(0.6rem, 1.3rem);
+}
+
 .card-front__number {
     margin-bottom: 1rem;
     word-spacing: 0.66rem;
 }
 
-.card-front__text--flexbox, .form__flexbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 0.6rem;
-}
-
 .card-section__cvc {
-    font-size: 0.6rem;
+    font-size: min(0.6rem, 0.8rem);
     text-align: end;
     margin-top: 5rem;
     margin-right: 2.3rem;
@@ -115,6 +113,7 @@ p {
 }
 
 .form {
+    height: min(300px, 350px);
     display: flex;
     flex-direction: column;
 }
@@ -122,6 +121,7 @@ p {
 label {
     font-size: 0.7rem;
     letter-spacing: 0.1rem;
+   
 }
 
 input {
@@ -129,7 +129,11 @@ input {
     height: 40px;
     border: 1px solid var(--light-grayish-violet);
     border-radius: 10px;
-    margin: 0.3rem 0 1rem 0;
+     margin: 0.3rem 0 1rem 0;
+}
+
+.form__card-name input:focus {
+    outline: var(--light-grayish-violet);
 }
 
 .form__flexbox input {
@@ -168,11 +172,11 @@ input::placeholder {
 
 .thanks-state {
     display: none;
-    width: 90%;
-    height: auto;
+    width: fit-content;
+    height: 290px;
+    text-align: center;
     margin: 0 auto;
     margin-top: 7rem;
-    text-align: center;
 }
 
 .thanks-state__title {
@@ -212,18 +216,70 @@ footer {
     text-decoration: none; 
 }
 
+/* ERROR */
+.error-box-name, .error-box-cardNumber, .error-box-date, .error-box-cvc {
+    color: var(--red);
+    font-size: 0.7rem;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 1024px){
     main {
         display: flex;
-        height: 100vh;
     }
 
     .card-section {
-        width: 50%;
+        width: 30%;
         height: auto;
-        background: url(images/bg-main-mobile.png) var(--very-dark-violet);
+        background: url(images/bg-main-desktop.png) var(--very-dark-violet);
         background-size: cover;
+    }
+
+    .form__card-name:focus {
+        border: 1px solid var(--very-dark-violet);
+    }
+    .card-section__card-front, .card-section__card-back {
+        width: min(30%, 350px);
+        height: min(30%, 180px);
+    }
+    
+    .card-section__card-front {
+        left: 100px;
+        top: 130px;
+    }
+    
+    .card-section__card-back {
+        left: 190px;
+        top: 340px;
+    }
+
+    .card-section__cvc {
+        font-size: 0.8rem;
+    }
+
+    /* FORM SECTION */
+
+    .form-section {
+        display: flex;
+        align-items: center;
+        width: min(30%, 25%);
+        margin-top: 0;
+        padding-bottom: 0;
+        
+    }
+
+    footer {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .card-section__card-front {
+        left: 150px;
+    }
+    
+    .card-section__card-back {
+        left: 250px;
     }
 }
