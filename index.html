@@ -29,13 +29,10 @@
             <p class="card-front__name">Jane Appleseed</p>  
             <p><span class="card-front__mounth">00</span>/<span class="card-front__year">00</span> </p>
           </div>
-          
         </section>
-        
-          
       </div>
 
-      <div class="card-section__card-back">
+      <div class="card-section__card-back" >
         <p class="card-section__cvc">000</p>
       </div>
     </section>
@@ -43,11 +40,13 @@
     <section class="form-section">
       <form class="form">
         <section>
-          <label for="name">CARDHOLDER NAME</label>
-          <input type="text" name="name" id="form__card-name" placeholder="e.g. Jane Appleseed">
+          <label for="name">CARDHOLDER NAME<input type="text" name="name" id="form__card-name" placeholder="e.g. Jane Appleseed" required>
+          <div class="error-box-name"></div></label>
+          
 
           <label for="form__card-number">CARD NUMBER</label>
-          <input type="number" name="" id="form__card-number" placeholder="e.g. 1234 5678 9123 0000">
+          <input type="text" name="" id="form__card-number" placeholder="e.g. 1234 5678 9123 0000" min="1111111111111111" max="9999999999999999" pattern="[0-9]" required>
+          <div class="error-box-cardNumber"></div>
         </section>
         
         <section class="form__flexbox">
@@ -55,19 +54,21 @@
           <label for="form__card-date--MM form__card-date--YY">EXP DATE (MM/YY)</label>
 
           <div>
-            <input type="number" id="form__card-date--MM" placeholder="MM">
-            <input type="number" id="form__card-date--YY" placeholder="YY">
+            <input type="number" id="form__card-date--MM" placeholder="MM" min="01" max="99">
+            <input type="number" id="form__card-date--YY" placeholder="YY" min="22" max="99">
+            <div class="error-box-date"></div>
           </div>
           
         </section>
 
         <section class="form__flexbox--box">
           <label for="form__card-CVC">CVC</label>
-          <input type="number" name="" id="form__card-CVC" placeholder="e.g. 123">
+          <input type="number" name="" id="form__card-CVC" placeholder="e.g. 123" min="001" max="999">
+          <div class="error-box-cvc"></div>
         </section>
         </section>
         
-        <button type="button" class="form__button">Confirm</button>
+        <button class="form__button">Confirm</button>
       </form>
     </section>
 
