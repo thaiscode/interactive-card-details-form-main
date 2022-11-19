@@ -1,5 +1,5 @@
 :root {
-    --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --linear-gradient: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     --red: hsl(0, 100%, 66%);
     --white: hsl(0, 0%, 100%);
     --light-grayish-violet: hsl(270, 3%, 87%);
@@ -103,6 +103,7 @@ p {
 
 /* FORM SECTION */
 
+
 .form-section {
     width: 90%;
     height: auto;
@@ -121,7 +122,6 @@ p {
 label {
     font-size: 0.7rem;
     letter-spacing: 0.1rem;
-   
 }
 
 input {
@@ -129,11 +129,20 @@ input {
     height: 40px;
     border: 1px solid var(--light-grayish-violet);
     border-radius: 10px;
-     margin: 0.3rem 0 1rem 0;
+    margin: 0.3rem 0 1rem 0;
+    color: var(--very-dark-violet);
 }
 
-.form__card-name input:focus {
-    outline: var(--light-grayish-violet);
+input::placeholder {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    padding-left: 1rem;
+    color: var(--light-grayish-violet);
+}
+
+input:hover {
+    border-color: var(--linear-gradient);
+    cursor: pointer;
 }
 
 .form__flexbox input {
@@ -150,13 +159,6 @@ input {
     width: 100%;
 }
 
-input::placeholder {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem;
-    padding-left: 1rem;
-    color: var(--light-grayish-violet);
-}
-
 .form__button, .thanks-state__button {
     font-size: 1.125rem;
     font-family: 'Space Grotesk', sans-serif;
@@ -166,6 +168,10 @@ input::placeholder {
     background-color: var(--very-dark-violet);
     color: var(--white);
     margin-top: 1rem;
+}
+
+.form__button:hover, .thanks-state__button:hover {
+    cursor: pointer;
 }
 
 /* Thank you state */
