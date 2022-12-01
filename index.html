@@ -52,20 +52,20 @@
           <div class="error-box-cardNumber"></div>
         </section>
         
-        <section class="form__flexbox">
+        <section class="form__flexbox" style="border: 1px  solid red;">
           <section class="form__flexbox--box">
           <label for="form__card-date--MM">EXP DATE (MM/YY)</label>
-            <div>
-              <input type="text" name="cardDateMM" id="form__card-date--MM" placeholder="MM" maxlength="2">
-              <input type="text" name="cardDateYY" id="form__card-date--YY" placeholder="YY" maxlength="2">
+            <div style="border: 1px  solid green;">
+              <input type="text" name="cardDateMM" id="form__card-date--MM" placeholder="MM" maxlength="2" pattern="[0-9]{2}">
+              <input type="text" name="cardDateYY" id="form__card-date--YY" placeholder="YY" maxlength="2" pattern="[0-9]{2}">
             </div>
           
             <div class="error-box-date"></div>
           </section>
 
-            <section class="form__flexbox--box">
+            <section class="form__flexbox--box" style="border: 1px  solid blue;">
               <label for="form__card-CVC">CVC</label>
-              <input type="text" name="cvc" id="form__card-CVC" placeholder="e.g. 123" maxlength="3" >
+              <input type="text" name="cvc" id="form__card-CVC" placeholder="e.g. 123" maxlength="3" pattern="[0-9]{3}">
 
               <div class="error-box-cvc"></div>
             </section>
@@ -90,6 +90,6 @@
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> Coded by <a href="https://github.com/thaiscode">@thaiscode</a>.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script2.js"></script>
 </body>
 </html>

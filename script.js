@@ -64,7 +64,12 @@ function validation() {
         cvc.style.border = '1px solid hsl(0, 100%, 66%)'
         cvc.style.marginBottom = '0'
         errorCVC.innerHTML = "Can´t be blank"
-    } 
+    } else if (!cvc.checkValidity()) {
+        cvc.style.border = '1px solid hsl(0, 100%, 66%)'
+        cvc.style.marginBottom = '0'
+        errorCVC.style.marginBottom = '0.5rem'
+        errorCVC.innerHTML = "Wrong format, numbers only"
+    }
     
     if (cardNumber.value == "") {
         cardNumber.style.border = '1px solid hsl(0, 100%, 66%)'
@@ -92,9 +97,10 @@ function thanksState() {
 
 /* Continue button*/
 let continueBTN = document.querySelector('.thanks-state__button')
-    continueBTN.addEventListener('click', function() {
+
+continueBTN.addEventListener('click', function() {
         window.location.reload()
-    })
+})
 
 
 

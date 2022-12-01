@@ -1,6 +1,6 @@
 let form = document.querySelector('.form')
-
-form.addEventListener('submit', (e) => {
+let button = document.querySelector('.form__button')
+button.addEventListener('click', (e) => {
     /* Tirar comportamento padrão do browser */
     e.preventDefault();
 
@@ -61,6 +61,7 @@ function nameVali() {
         inputName.parentElement.classList.add("error")
         /* adicionar mensagem de erro*/
         errorName.innerHTML = "Can't be blank"
+        return false
     } else {
         inputName.parentElement.classList.remove("error")
         errorName.innerHTML = ""
@@ -76,19 +77,24 @@ function numberCardVali() {
         cardNumber.parentElement.classList.add("error")
         /* adicionar mensagem de erro*/
         errorCardNumber.innerHTML = "Can't be blank"
-    } else {
+        
+    } else{
         cardNumber.parentElement.classList.remove("error")
         errorCardNumber.innerHTML = ""
+       
+    }
+
+    /* Pattern validation */
+    if (!cardNumber.checkValidity()) {
+        cardNumber.parentElement.classList.add("error")
+        errorCardNumber.innerHTML = "Wrong format, numbers only"
+        console.log("entrou aqui")
+        return false
+        
+    } else {
         return true
     }
     
-    /* Pattern validation */
-    if (cardNumber.validity.patternMismatch === true) {
-        cardNumber.parentElement.classList.add("error")
-        errorCardNumber.innerHTML = "Wrong format, numbers only"
-    } else {
-        return true
-    }
 }
 
 function DateMMVali() {
@@ -99,16 +105,18 @@ function DateMMVali() {
         cardDateMM.parentElement.classList.add("error")
         /* adicionar mensagem de erro*/
         errorDate.innerHTML = "Can't be blank"
+        
     } else {
         cardDateMM.parentElement.classList.remove("error")
         errorDate.innerHTML = ""
-        return true
+       
     }
 
     /* Pattern validation */
-    if (cardDateMM.validity.patternMismatch === true) {
+    if (!cardDateMM.checkValidity()) {
         cardDateMM.parentElement.classList.add("error")
         errorDate.innerHTML = "Wrong format, numbers only"
+        return false
     } else {
         return true
     }
@@ -122,16 +130,18 @@ function DateYYVali() {
         cardDateYY.parentElement.classList.add("error")
         /* adicionar mensagem de erro*/
         errorDate.innerHTML = "Can't be blank"
+        
     } else {
         cardDateYY.parentElement.classList.remove("error")
         errorDate.innerHTML = ""
-        return true
+        
     }
 
     /* Pattern validation */
-    if (cardDateYY.validity.patternMismatch === true) {
+    if (!cardDateYY.checkValidity()) {
         cardDateYY.parentElement.classList.add("error")
         errorDate.innerHTML = "Wrong format, numbers only"
+        return false
     } else {
         return true
     }
@@ -145,16 +155,18 @@ function cvcVali() {
         cvc.parentElement.classList.add("error")
         /* adicionar mensagem de erro*/
         errorCVC.innerHTML = "Can't be blank"
+        
     } else {
         cvc.parentElement.classList.remove("error")
         errorCVC.innerHTML = ""
-        return true
+        
     }
 
     /* Pattern validation */
-    if (cvc.validity.patternMismatch === true) {
+    if (!cvc.checkValidity()) {
         cvc.parentElement.classList.add("error")
         errorCVC.innerHTML = "Wrong format, numbers only"
+        return false
     } else {
         return true
     }
@@ -162,7 +174,7 @@ function cvcVali() {
 
 /*Thank you state*/ 
 function finalValidation() {
-    if (nameVali() === true && numberCardVali() === true && DateMMVali() === true && DateYYVali() === true && cvcVali() === true) {
+    if (numberCardVali() === true && DateMMVali() === true && DateYYVali() === true && cvcVali() === true && nameVali() === true) {
         
         let formSection = document.querySelector('.form-section')
         let thanksState = document.querySelector('.thanks-state')
@@ -170,6 +182,8 @@ function finalValidation() {
         formSection.style.display = 'none'
         thanksState.style.display = 'block'
         
+    } else {
+
     }
 }
 
