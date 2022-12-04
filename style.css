@@ -146,13 +146,26 @@ input:hover {
 }
 
 .form__flexbox input {
-    width: 45%;
+    width: 90%;
 }
 
 .form__flexbox--box {
     width: 110%;
+    max-height: 80px;
     display: flex;
     flex-direction: column;
+}
+
+.form__flexbox--box div:nth-child(2) {
+    display: flex; 
+    width: 100%;
+    
+}
+
+.form__flexbox--box div:first-child {
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
 }
 
 #form__card-CVC {
