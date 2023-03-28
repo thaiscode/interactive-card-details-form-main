@@ -1,7 +1,7 @@
 let form = document.querySelector('.form')
 let button = document.querySelector('.form__button')
 button.addEventListener('click', (e) => {
-    /* Tirar comportamento padrão do browser */
+    /*Remove default browser behavior*/
     e.preventDefault();
 
     validation()
@@ -22,8 +22,10 @@ inputName.addEventListener('input', function(e) {
 })
 
 cardNumber.addEventListener('input', function(e) {
-   let numberCard = document.querySelector('.card-front__number')
-    numberCard.innerHTML = e.target.value 
+    let numberCard = document.querySelector('.card-front__number')
+    let inputNumber = e.target.value 
+    let numberFormat = `${e.target.value.slice(0, 4)} ${e.target.value.slice(4, 8)} ${e.target.value.slice(8, 12)} ${e.target.value.slice(12, 16)}`
+    numberCard.innerHTML = inputNumber.replace(/[0-9]{16}/, numberFormat) 
 })
 
 cardDateMM.addEventListener('input', function(e) {
@@ -57,9 +59,9 @@ function validation() {
 function nameVali() {
     let errorName = document.querySelector('.error-box-name')
     if (inputName.value === "") {
-        /*Adicionar classe error */
+        /*Add error class* */
         inputName.parentElement.classList.add("error")
-        /* adicionar mensagem de erro*/
+        /*Add error message*/
         errorName.innerHTML = "Can't be blank"
         return false
     } else {
@@ -73,9 +75,9 @@ function numberCardVali() {
     let errorCardNumber = document.querySelector('.error-box-cardNumber')
 
     if (cardNumber.value === "") {
-        /*Adicionar classe error */
+        /*Add error class*/
         cardNumber.parentElement.classList.add("error")
-        /* adicionar mensagem de erro*/
+        /*Add error message*/
         errorCardNumber.innerHTML = "Can't be blank"
         
     } else{
@@ -101,9 +103,9 @@ function DateMMVali() {
     let errorDate = document.querySelector('.error-box-date')
 
     if (cardDateMM.value === "") {
-        /*Adicionar classe error */
+        /*Add error class*/
         cardDateMM.parentElement.classList.add("error")
-        /* adicionar mensagem de erro*/
+        /*Add error message*/
         errorDate.innerHTML = "Can't be blank"
         
     } else {
@@ -126,7 +128,7 @@ function DateYYVali() {
     let errorDate = document.querySelector('.error-box-date')
 
     if (cardDateYY.value === "") {
-        /*Adicionar classe error */
+        /*Add error class*/
         cardDateYY.parentElement.classList.add("error")
         /* adicionar mensagem de erro*/
         errorDate.innerHTML = "Can't be blank"
@@ -151,15 +153,14 @@ function cvcVali() {
     let errorCVC = document.querySelector('.error-box-cvc')
 
     if (cvc.value === "") {
-        /*Adicionar classe error */
+        /*Add error class*/
         cvc.parentElement.classList.add("error")
-        /* adicionar mensagem de erro*/
+        /*Add error message*/
         errorCVC.innerHTML = "Can't be blank"
         
     } else {
         cvc.parentElement.classList.remove("error")
         errorCVC.innerHTML = ""
-        
     }
 
     /* Pattern validation */
@@ -187,7 +188,7 @@ function finalValidation() {
     }
 }
 
-/* Continue button*/
+/* Continue button */
 let continueBTN = document.querySelector('.thanks-state__button')
 
 continueBTN.addEventListener('click', function() {
